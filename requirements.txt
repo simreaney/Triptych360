@@ -1,0 +1,6 @@
+PySide6
+moderngl
+numpy
+Pillow
+opencv-python
+pyspacemouse
