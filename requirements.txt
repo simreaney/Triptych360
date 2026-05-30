@@ -4,3 +4,5 @@ numpy
 Pillow
 opencv-python
 pyspacemouse
+laspy[lazrs]
+plyfile

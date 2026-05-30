@@ -11,6 +11,7 @@ The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, 
 ## Features
 - **GPU-Accelerated**: Fast real-time Equirectangular to Rectilinear conversion.
 - **Video Playback**: Native support for auto-looping 360 videos (`.mp4`, `.mkv`, `.avi`, `.mov`) via OpenCV.
+- **3D Model Support**: Load LiDAR point clouds from `.las` / `.laz` and Gaussian splats from `.ply` / `.splat`.
 - **Multi-Window Display & Kiosk Mode**: Automatically opens up 3 separate views. Check the "Kiosk Mode" box to make them frameless and smoothly lock onto your 3 monitors. The projection math cleanly locks the edges to precisely 90 degrees horizontally, ensuring a seamless U-shape layout.
 - **Interactive Unified Controller**: Use your mouse to rotate and zoom across all display outputs instantly.
 - **3Dconnexion SpaceMouse Support**: Move around your panoramas smoothly using native SpaceMouse integration.
@@ -45,7 +46,7 @@ The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, 
 
 2. **Load Media:**
    * A controller window will appear. Click "Load Equirectangular Media".
-   * You can test with the provided `sample_equirectangular.jpg` or load any supported video/image file.
+   * You can test with the provided `sample_equirectangular.jpg` or load any supported video/image/3D file (`.las`, `.laz`, `.ply`, `.splat`).
    * Three new windows will open showing the Left, Front, and Right segments of the media.
 
 3. **Navigate & Control:**
