@@ -2,9 +2,9 @@
   <img src="banner.svg" alt="Triptych360 Banner" width="800"/>
 </div>
 
-# Triptych360 - 360 Video Wall Controller
+# Triptych360 - 360 Media + 3D Video Wall Controller
 
-Triptych360 is a Python application built with PySide6 and ModernGL that takes a 360-degree equirectangular image or video and projects it in real-time onto three separate windows representing Left, Front, and Right views. This is designed for video wall installations mapped in a U-shape.
+Triptych360 is a Python application built with PySide6 and ModernGL that takes a 360-degree equirectangular image/video or a 3D point-based model and projects it in real-time onto three separate windows representing Left, Front, and Right views. This is designed for video wall installations mapped in a U-shape.
 
 The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, making it highly performant and capable of decoding high-framerate videos smoothly.
 
@@ -37,6 +37,15 @@ The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, 
    pip install -r requirements.txt
    ```
 
+## Supported File Types
+
+- **360 Media**
+  - Images: `.png`, `.jpg`, `.jpeg`
+  - Videos: `.mp4`, `.mkv`, `.avi`, `.mov`
+- **3D Data**
+  - LiDAR point clouds: `.las`, `.laz`
+  - Gaussian splats: `.ply`, `.splat`
+
 ## Usage
 
 1. **Launch the application:**
@@ -45,7 +54,7 @@ The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, 
    ```
 
 2. **Load Media:**
-   * A controller window will appear. Click "Load Equirectangular Media".
+   * A controller window will appear. Click **"Load Media / 3D Model"**.
    * You can test with the provided `sample_equirectangular.jpg` or load any supported video/image/3D file (`.las`, `.laz`, `.ply`, `.splat`).
    * Three new windows will open showing the Left, Front, and Right segments of the media.
 
