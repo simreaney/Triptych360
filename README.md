@@ -2,15 +2,16 @@
   <img src="banner.svg" alt="Triptych360 Banner" width="800"/>
 </div>
 
-# Triptych360 - 360 Video Wall Controller
+# Triptych360 - 360 Media + 3D Video Wall Controller
 
-Triptych360 is a Python application built with PySide6 and ModernGL that takes a 360-degree equirectangular image or video and projects it in real-time onto three separate windows representing Left, Front, and Right views. This is designed for video wall installations mapped in a U-shape.
+Triptych360 is a Python application built with PySide6 and ModernGL that takes a 360-degree equirectangular image/video or a 3D point-based model and projects it in real-time onto three separate windows representing Left, Front, and Right views. This is designed for video wall installations mapped in a U-shape.
 
 The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, making it highly performant and capable of decoding high-framerate videos smoothly.
 
 ## Features
 - **GPU-Accelerated**: Fast real-time Equirectangular to Rectilinear conversion.
 - **Video Playback**: Native support for auto-looping 360 videos (`.mp4`, `.mkv`, `.avi`, `.mov`) via OpenCV.
+- **3D Model Support**: Load LiDAR point clouds from `.las` / `.laz` and Gaussian splats from `.ply` / `.splat`.
 - **Multi-Window Display & Kiosk Mode**: Automatically opens up 3 separate views. Check the "Kiosk Mode" box to make them frameless and smoothly lock onto your 3 monitors. The projection math cleanly locks the edges to precisely 90 degrees horizontally, ensuring a seamless U-shape layout.
 - **Interactive Unified Controller**: Use your mouse to rotate and zoom across all display outputs instantly.
 - **3Dconnexion SpaceMouse Support**: Move around your panoramas smoothly using native SpaceMouse integration.
@@ -36,6 +37,15 @@ The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, 
    pip install -r requirements.txt
    ```
 
+## Supported File Types
+
+- **360 Media**
+  - Images: `.png`, `.jpg`, `.jpeg`
+  - Videos: `.mp4`, `.mkv`, `.avi`, `.mov`
+- **3D Data**
+  - LiDAR point clouds: `.las`, `.laz`
+  - Gaussian splats: `.ply`, `.splat`
+
 ## Usage
 
 1. **Launch the application:**
@@ -44,8 +54,8 @@ The projection mapping is entirely GPU-accelerated using GLSL fragment shaders, 
    ```
 
 2. **Load Media:**
-   * A controller window will appear. Click "Load Equirectangular Media".
-   * You can test with the provided `sample_equirectangular.jpg` or load any supported video/image file.
+   * A controller window will appear. Click **"Load Media / 3D Model"**.
+   * You can test with the provided `sample_equirectangular.jpg` or load any supported video/image/3D file (`.las`, `.laz`, `.ply`, `.splat`).
    * Three new windows will open showing the Left, Front, and Right segments of the media.
 
 3. **Navigate & Control:**
